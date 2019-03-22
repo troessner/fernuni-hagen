@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 1, Aufgabe 2}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 2}
+
+Sei \(\mathbb{K}\) ein Körper und \(f: M_{22}(\mathbb{K}) \rightarrow \mathbb{K}\) definiert durch
+\(
+M=
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+\rightarrow ad - bc
+\)
+für alle
+\(
+M=
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+\in M_{22}(\mathbb{K})
+\)
+
+Beweisen oder widerlegen Sie folgende Behauptungen:
+
+\section{TODO: Die Abbildung f ist surjektiv:}
+
+
+\section{Die Abbildung f ist nicht injektiv.}
+
+Sei
+
+\[
+A=
+  \begin{pmatrix}
+    1 & 2 \\
+    3 & 4
+  \end{pmatrix}
+,
+B=
+  \begin{pmatrix}
+    4 & 3 \\
+    2 & 1
+  \end{pmatrix}
+\]
+
+dann ist
+
+\[f(A) = 1*4 - 2*3 = f(B) = 4*1 - 3*2\]
+
+womit wir ein Element im Bild von \(f\) gefunden haben mit mehr als einem Urbild. Damit ist \(f\) nicht injektiv.
+
+\section{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(AB) = f(A) f(B)\):}
+
+Sei
+
+\[
+A=
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+,
+B=
+  \begin{pmatrix}
+    a' & b' \\
+    c' & d'
+  \end{pmatrix}
+\]
+
+dann gilt
+
+\[
+f(A)f(B)=(ad - bc)(a'd' - b'c') = aa'dd' - adb'c' - bca'd' + bb'cc'
+= ada'd' - adb'c' - bca'd' + bcb'c'
+\]
+
+und
+
+\[
+AB=
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \begin{pmatrix}
+    a' & b' \\
+    c' & d'
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    aa'bc' & ab'bd' \\
+    ca'dc' & cb'dd'
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    aba'c' & abb'd' \\
+    cda'c' & cdb'd'
+  \end{pmatrix}
+\]
+
+und
+
+\[
+f(AB)= aba'c'cdb'd' - abb'd'cda'c'
+\]
+
+\section{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(A+B) = f(A) + f(B)\)}
+
+\end{document}

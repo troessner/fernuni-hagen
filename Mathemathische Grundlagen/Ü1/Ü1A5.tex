@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 1, Aufgabe 5}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 1.5}
+
+Sei \(n \in \mathbb{N}\). Eine binäre Folge der Länge \(n\) ist ein Ausdruck der Form \((x_{1}, ..., x_{n})\), wobei \(x_{i} \in \{0, 1\}\) für alle \(1 \leq i \leq n\).
+
+\subsection*{Bestimmen Sie alle binären Folgen der Länge 1,2,3.}
+
+Für \(n = 1\):
+
+(0), (1)
+
+Für \(n = 2\):
+
+(00), (01), (10), (11)
+
+Für \(n = 3\):
+
+(000), (001), (010), (011), (100), (101), (110), (111)
+
+\subsection*{ Finden Sie eine Formel für die Anzahl der binären Folgen \(n\), wobei \(n\) eine feste, natürliche Zahl ist, und beweisen Sie diese Formel mit Induktion nach \(n\).}
+
+Für \(n = 1\) hat man zwei Möglichkeiten, entweder 0 oder 1. Für \(n = 2\) sind es 4 Möglichkeiten, für \(n = 3\) 8 Möglichkeiten.
+
+Sei \(a_{n}\) eine binäre Folge und \(|a_{n}|\) die Anzahl der möglchen Folgen, so steht zu vermuten, das \(|a_{n}| = 2^{n}\).
+
+\textbf{Behauptung}:
+
+Für alle \(n \in \mathbb{N}\) ist \(|a_{n}| = 2^{n}\)
+
+\textbf{Beweis:}
+
+\textbf{Induktionsanfang:} Sei \(n = 1\) dann ist \(|a_{1}| = 2^{1} = 2\) was wahr ist (siehe oben).
+
+\textbf{Induktionsannahme:} Sei \(n > 1\) dann ist \(|a_{n}| = 2^{n}\)
+
+\textbf{Induktionsschritt:} Zu zeigen ist, das \(|a_{n+1}| = 2^{n+1}\)
+
+Da das Hinzufügen eines weiteren Folgengliedes die Anzahl der Möglichkeiten der Folge verdoppelt gilt:
+
+\[
+|a_{n+1}| = |a_{n}| * 2
+\]
+
+Mit der Induktionsannahme gilt nun:
+
+\[
+|a_{n+1}| = |a_{n}| * 2 = 2^{n} * 2 = 2^{n+1}
+\]
+
+was zu zeigen war.
+
+
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 1, Aufgabe 4}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 4}
+
+Vorweg eine Definition: Sei \(A = (a_{ij}) \in M_{nn}(\mathbb(K)) \). Die Spur von \(A\) ist definiert als Summe der Diagonalelemente von \(A\), also \(Spur(A) = \sum_{i = 1}^{n} a_{ii}\)
+
+Beweisen Sie folgende Aussagen:
+
+\subsection*{Für alle \(A, B \in M_{nn}(\mathbb(K))\) gilt \(Spur(A + B) = Spur(A) + Spur(B) \):}
+
+\[
+Spur(A) = \sum_{i = 1}^{n} a_{ii}
+\]
+\[
+Spur(B) = \sum_{i = 1}^{n} b_{jj}
+\]
+\[
+Spur(A) + Spur(B) = \sum_{i = 1}^{n} a_{ii} + \sum_{i = 1}^{n} b_{ii}
+\]
+
+Sei \(C = A + B\) so gilt für ein beliebiges aber festes Diagonalelement \(c_{ii}\) von C \(c_{ii} = a_{ii} + b{ii}\) und damit ist
+
+\[
+Spur(C) = \sum_{i = 1}^{n} (a_{ii} + b_{ii}) = \sum_{i = 1}^{n} a_{ii} + \sum_{i = 1}^{n} b_{ii}
+\]
+
+woraus die Behauptung folgt.
+
+\subsection*{Für alle \(A \in M_{nn}(\mathbb(K))\) und alle \(a \in \mathbb(K)\) gilt \(Spur(aA) = a Spur(A)\):}
+
+Anmerkung: Ich benenne \(a\) im Folgenden um zu \(\gamma\) da es sonst zu Kollisionen mit \(\sum_{i = 1}^{n} (a_{ii})\) kommt später.
+
+Der Skalar \(\gamma\) multipliziert mit der Matrix \(A\) bedeutet, das jeder Eintrag der Matrix und damit auch jedes einzelne Diagonalelement von \(A\) mit \(\gamma\) multipliziert wird. Die Spur von \(\gamma A\) is damit:
+
+\[
+Spur(\gamma A) = \sum_{i = 1}^{n} \gamma (a_{ii})
+\]
+
+Da \(\gamma\) kein Teil der Summe ist können wir es vor die Summe ziehen, woraus folgt:
+
+\[
+Spur(\gamma A) = \sum_{i = 1}^{n} \gamma (a_{ii}) = \gamma \sum_{i = 1}^{n} (a_{ii}) = \gamma Spur(A)\]
+
+Was zu zeigen war.
+
+\subsection*{TODO: Für alle \(A, B \in M_{nn}(\mathbb(K))\) gilt \(Spur(AB) = Spur(BA) \):}
+
+\end{document}

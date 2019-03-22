@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 1, Aufgabe 1}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 1.1}
+
+Seien A, B und C Aussagen. Beweisen Sie, dass folgende Aussagen logisch äquivalent sind.
+
+\section*{Aufgabe 1.1.1}
+
+\(A \wedge (B \lor C)\) und \((A \wedge B) \lor (A \wedge C)\)
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| }
+ \hline
+ A & B & C & \(B \lor C\) & \(A \wedge B\) & \(A \wedge C\) & \(A \wedge (B \lor C)\)& \((A \wedge B) \lor (A \wedge C)\) \\
+ \hline\hline
+ w & w & w & w & w & w & w & w \\
+ w & w & f & w & w & f & w & w \\
+ w & f & w & w & f & w & w & w \\
+ w & f & f & f & f & f & f & f \\
+ f & w & w & w & f & f & f & f \\
+ f & w & f & w & f & f & f & f \\
+ f & f & w & w & f & f & f & f \\
+ f & f & f & f & f & f & f & f \\
+ \hline
+\end{tabular}
+\end{center}
+
+Aus der Gleichheit der vorletzten und der letzten Spalte folgt die Behauptung.
+
+\section*{Aufgabe 1.1.2}
+
+\(A \lor (B \wedge C)\) und \((A \lor B) \wedge (A \lor C)\)
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| }
+ \hline
+ A & B & C & \(B \wedge C\) & \(A \lor B\) & \(A \lor C\) & \(A \lor (B \wedge C)\)& \((A \lor B) \wedge (A \lor C)\) \\
+ \hline\hline
+ w & w & w & w & w & w & w & w \\
+ w & w & f & f & w & w & w & w \\
+ w & f & w & f & w & w & w & w \\
+ w & f & f & f & w & w & w & w \\
+ f & w & w & w & w & w & w & w \\
+ f & w & f & f & w & f & f & f \\
+ f & f & w & f & f & w & f & f \\
+ f & f & f & f & f & f & f & f \\
+ \hline
+\end{tabular}
+\end{center}
+
+Aus der Gleichheit der vorletzten und der letzten Spalte folgt die Behauptung.
+
+\end{document}https://www.overleaf.com/project/5c8e33b08224fd3e79455e90
