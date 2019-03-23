@@ -36,10 +36,22 @@ M=
 
 Beweisen oder widerlegen Sie folgende Behauptungen:
 
-\section{TODO: Die Abbildung f ist surjektiv:}
+\subsection*{Die Abbildung f ist surjektiv:}
 
+Sei \(z \in \mathbb{K}\) und \(z = ad - bc\) dann gilt
 
-\section{Die Abbildung f ist nicht injektiv.}
+\[
+M =
+  \begin{pmatrix}
+    z & 0 \\
+    0 & 1
+  \end{pmatrix}
+  \in M_{22}(\mathbb{K})
+\]
+
+und es ist \( f(M) = z*1 - 0 = z \). Jedes \(z \in \mathbb{K}\) besitzt also ein Urbild unter \(f\) und damit ist die Abbildung surjektiv.
+
+\subsection*{Die Abbildung f ist nicht injektiv.}
 
 Sei
 
@@ -63,7 +75,7 @@ dann ist
 
 womit wir ein Element im Bild von \(f\) gefunden haben mit mehr als einem Urbild. Damit ist \(f\) nicht injektiv.
 
-\section{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(AB) = f(A) f(B)\):}
+\subsection*{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(AB) = f(A) f(B)\):}
 
 Sei
 
@@ -88,7 +100,7 @@ f(A)f(B)=(ad - bc)(a'd' - b'c') = aa'dd' - adb'c' - bca'd' + bb'cc'
 = ada'd' - adb'c' - bca'd' + bcb'c'
 \]
 
-und
+Nun ist
 
 \[
 AB=
@@ -102,22 +114,75 @@ AB=
   \end{pmatrix}
   =
   \begin{pmatrix}
-    aa'bc' & ab'bd' \\
-    ca'dc' & cb'dd'
+    aa'+bc' & ab'+bd' \\
+    ca'+dc' & cb'+dd'
+  \end{pmatrix}
+\]
+
+und damit
+
+\[
+f(AB)= (aa'+bc')(cb'+dd') - (ab'+bd')(ca'+dc')
+     = aa'cb' + aa'dd' + bc'cb' + bc'dd' - ab'ca' - ab'dc' - bd'ca' - bd'dc'
+     = aa'dd' - ab'dc' - bd'ca' + bc'cb'
+     = f(A)f(B)
+\]
+
+Was zu zeigen war.
+
+\subsection*{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(A+B) = f(A) + f(B)\)}
+
+Sei
+
+\[
+A=
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+,
+B=
+  \begin{pmatrix}
+    a' & b' \\
+    c' & d'
+  \end{pmatrix}
+\]
+
+dann gilt
+
+\[
+f(A)+f(B) = (ad - bc) + (a'd' - b'c')
+          = ad + a'd' - bc - b'c'
+\]
+
+Nun ist
+
+\[
+A+B=
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  +
+  \begin{pmatrix}
+    a' & b' \\
+    c' & d'
   \end{pmatrix}
   =
   \begin{pmatrix}
-    aba'c' & abb'd' \\
-    cda'c' & cdb'd'
+    a+a' & b+b' \\
+    c+c' & d+d'
   \end{pmatrix}
 \]
 
-und
+und damit
 
 \[
-f(AB)= aba'c'cdb'd' - abb'd'cda'c'
+f(A+B)= ((a+a')(d+d'))-((b+b')(c+c'))
+      = (ad+ad'+a'd+a'd')-(bc+bc'+b'c+b'c')
 \]
+???      = ad + a'd' - bc - b'c'
 
-\section{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(A+B) = f(A) + f(B)\)}
+Was zu zeigen war.
 
 \end{document}
