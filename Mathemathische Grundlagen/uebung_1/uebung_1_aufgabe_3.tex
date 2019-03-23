@@ -33,30 +33,46 @@ besitzt. Finden Sie eine Matrix \(A \in G\), für die \(A^2=-I_{2}\) gilt. Dabei
 
 \subsection*{Kommutativität}
 
-Zu zeigen: \(AA'=A'A\)
+Sei
 
 \[
-AA'=
+A =
+    \begin{pmatrix}
+      a & b \\
+      -b & a
+    \end{pmatrix}
+,
+C =
+    \begin{pmatrix}
+      c & d \\
+      -d & c
+    \end{pmatrix}
+\]
+
+Zu zeigen: \(AC=CA\)
+
+\[
+AC=
   \begin{pmatrix}
     a & b \\
     -b & a
   \end{pmatrix}
   \begin{pmatrix}
-    a' & b' \\
-    -b' & a'
+    c & d \\
+    -d & c
   \end{pmatrix}
   =
   \begin{pmatrix}
-    aa'-bb'    & ab' + ba' \\
-    -ba' - ab' & -bb' + aa'
+    ac-bd    & ad + bc \\
+    -bc - ad & -bd + ac
   \end{pmatrix}
 \]
 
 \[
-A'A=
+CA=
   \begin{pmatrix}
-    a' & b' \\
-    -b' & a'
+    c & d \\
+    -d & c
   \end{pmatrix}
   \begin{pmatrix}
     a & b \\
@@ -64,71 +80,101 @@ A'A=
   \end{pmatrix}
   =
   \begin{pmatrix}
-    a'a - b'b  & a'b + b'a \\
-    -b'a - a'b & -b'b + a'a
+    ca - db  & cb + da \\
+    -da - cb & -db + ca
   \end{pmatrix}
   =
   \begin{pmatrix}
-    aa' - bb'  & ab' + ba' \\
-    -ba' -ab'  & -bb' + aa'
+    ac - bd  & ad + bc \\
+    -bc -ad  & -bd + ac
   \end{pmatrix}
 \]
 
 Was zu zeigen war.
 
-\subsection*{TODO: Assoziativität:}
+\subsection*{Assoziativität}
+
+Sei
+
+\[
+A =
+    \begin{pmatrix}
+      a & b \\
+      -b & a
+    \end{pmatrix}
+,
+C =
+    \begin{pmatrix}
+      c & d \\
+      -d & c
+    \end{pmatrix}
+,
+E =
+    \begin{pmatrix}
+      e & f \\
+      -f & e
+    \end{pmatrix}
+\]
 
 Zu zeigen ist, das
-\((AA')A''=A(A'A'')\)
+\((AC)E=A(CE)\)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% (AA')A''
+% (AC)E
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \[
 \begin{split}
-(AA')A''
+(AC)E
 =
 \left (
-\begin{pmatrix}
-  a & b \\
-  -b & a
-\end{pmatrix}
-*
-\begin{pmatrix}
-  a' & b' \\
-  -b' & a'
-\end{pmatrix}
+    \begin{pmatrix}
+      a & b \\
+      -b & a
+    \end{pmatrix}
+    *
+    \begin{pmatrix}
+      c & d \\
+      -d & c
+    \end{pmatrix}
 \right )
 *
 \begin{pmatrix}
-  a'' & b'' \\
-  -b'' & a''
+  e & f \\
+  -f & e
 \end{pmatrix}
 \\
 =
 \begin{pmatrix}
-  aa'-bb'    & ab' + ba' \\
-  -ba' - ab' & -bb' + aa'
+  ac-bd    & ad + bc \\
+  -bc - ad & -bd + ac
 \end{pmatrix}
 *
 \begin{pmatrix}
-  a'' & b'' \\
-  -b'' & a''
+  e & f \\
+  -f & e
 \end{pmatrix}
 \\
 =
-% TODO Calculate that.
+\begin{pmatrix}
+  ((a c - b d) e - (b c + a d) f &  e (b c + a d) + (a c - b d) f \\
+  (-b c - a d) e - (a c - b d) f & e (a c - b d) + (-b c - a d) f)
+\end{pmatrix}
+\\
+=
+\begin{pmatrix}
+  ace - bde - bcf - adf & ebc + ead + acf - bdf \\
+  -bce - ade - acf + bdf & eac - ebd - bcf - adf
+\end{pmatrix}
 \end{split}
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% A(A'A'')
+% A(CE)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \[
 \begin{split}
-A(A'A'')
+A(CE)
 =
 \begin{pmatrix}
   a & b \\
@@ -137,13 +183,13 @@ A(A'A'')
 *
 \left (
 \begin{pmatrix}
-  a' & b' \\
-  -b' & a'
+  c & d \\
+  -d & c
 \end{pmatrix}
 *
 \begin{pmatrix}
-  a'' & b'' \\
-  -b'' & a''
+  e & f \\
+  -f & e
 \end{pmatrix}
 \right )
 \\
@@ -154,14 +200,25 @@ A(A'A'')
 \end{pmatrix}
 *
 \begin{pmatrix}
-  a'a''-b'b'' & a'b'' + b'a'' \\
-  -b'a'' - a'b'' & -b'b'' + a'a''
+  ce - df & cf + de \\
+  -de - cf & -df + ce
 \end{pmatrix}
 \\
 =
-% TODO Calculate this.
+\begin{pmatrix}
+  (b (-c f - e d) + a (c e - f d) & a (c f + e d) + b (c e - f d) \\
+  a (-c f - e d) - b (c e - f d) & a (c e - f d) - b (c f + e d))
+\end{pmatrix}
+\\
+=
+\begin{pmatrix}
+    ace - bde - bcf - adf & ebc + ead + acf -bdf \\
+    -bce - ade - acf + bdf & eac - ebd - bcf - afd
+\end{pmatrix}
 \end{split}
 \]
+
+Wie man an den beiden jeweils letzten Zeilen sehen kann gilt \((AC)E=A(CE)\) womit die Assoziativität nachgewiesen wäre.
 
 \subsection*{Neutrales Element:}
 
