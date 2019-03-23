@@ -81,9 +81,31 @@ Was zu zeigen war.
 Zu zeigen ist, das
 \((AA')A''=A(A'A'')\)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (AA')A''
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \[
 \begin{split}
 (AA')A''
+=
+\left (
+\begin{pmatrix}
+  a & b \\
+  -b & a
+\end{pmatrix}
+*
+\begin{pmatrix}
+  a' & b' \\
+  -b' & a'
+\end{pmatrix}
+\right )
+*
+\begin{pmatrix}
+  a'' & b'' \\
+  -b'' & a''
+\end{pmatrix}
+\\
 =
 \begin{pmatrix}
   aa'-bb'    & ab' + ba' \\
@@ -96,21 +118,50 @@ Zu zeigen ist, das
 \end{pmatrix}
 \\
 =
-\begin{pmatrix}
-  ((aa'-bb')a'') + ((ab' + ba')(-b'')) & ((aa'-bb')b'') + ((ab' + ba')(a'')) \\
-  ((-ba'-ab')a'') + ((-bb' + aa')(-b'')) & ((-ba'-ab')b'') +  ((-bb' + aa')(a''))
-\end{pmatrix}
+% TODO Calculate that.
 \end{split}
 \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A(A'A'')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \[
 \begin{split}
 A(A'A'')
 =
-
+\begin{pmatrix}
+  a & b \\
+  -b & a
+\end{pmatrix}
+*
+\left (
+\begin{pmatrix}
+  a' & b' \\
+  -b' & a'
+\end{pmatrix}
+*
+\begin{pmatrix}
+  a'' & b'' \\
+  -b'' & a''
+\end{pmatrix}
+\right )
+\\
+=
+\begin{pmatrix}
+  a & b \\
+  -b & a
+\end{pmatrix}
+*
+\begin{pmatrix}
+  a'a''-b'b'' & a'b'' + b'a'' \\
+  -b'a'' - a'b'' & -b'b'' + a'a''
+\end{pmatrix}
+\\
+=
+% TODO Calculate this.
 \end{split}
 \]
-
 
 \subsection*{Neutrales Element:}
 
@@ -167,6 +218,5 @@ A^2
 \end{pmatrix}
 = -I_{2}
 \]
-
 
 \end{document}
