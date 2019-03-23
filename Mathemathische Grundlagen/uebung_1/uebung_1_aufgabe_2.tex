@@ -75,7 +75,7 @@ dann ist
 
 womit wir ein Element im Bild von \(f\) gefunden haben mit mehr als einem Urbild. Damit ist \(f\) nicht injektiv.
 
-\subsection*{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(AB) = f(A) f(B)\):}
+\subsection*{Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(AB) = f(A) f(B)\):}
 
 Sei
 
@@ -96,8 +96,13 @@ B=
 dann gilt
 
 \[
-f(A)f(B)=(ad - bc)(a'd' - b'c') = aa'dd' - adb'c' - bca'd' + bb'cc'
+\begin{split}
+f(A)f(B)=(ad - bc)(a'd' - b'c')
+\\
 = ada'd' - adb'c' - bca'd' + bcb'c'
+\\
+= ada'd' + bcb'c' - adb'c' - bca'd'
+\end{split}
 \]
 
 Nun ist
@@ -122,10 +127,18 @@ AB=
 und damit
 
 \[
-f(AB)= (aa'+bc')(cb'+dd') - (ab'+bd')(ca'+dc')
+\begin{split}
+f(AB)= ((aa'+bc')(cb'+dd')) - ((ab'+bd')(ca'+dc'))
+\\
      = aa'cb' + aa'dd' + bc'cb' + bc'dd' - ab'ca' - ab'dc' - bd'ca' - bd'dc'
-     = aa'dd' - ab'dc' - bd'ca' + bc'cb'
+\\
+     = aca'b' + ada'd' + bcb'c' + bdc'd' -
+       aca'b' - adb'c' - bca'd' - bdc'd'
+\\
+     = ada'd' + bcb'c' - adb'c' - bca'd'
+\\
      = f(A)f(B)
+\end{split}
 \]
 
 Was zu zeigen war.
