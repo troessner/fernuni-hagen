@@ -1,0 +1,269 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 2, Aufgabe 2}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 2}
+
+Sei
+\(
+A=
+  \begin{pmatrix}
+    -1 & 4 & -4 \\
+    1 & -3 & 1 \\
+    1 & -2 & 0
+  \end{pmatrix}
+\in M_{33}(\mathbb{R})
+\).
+Bestimmen Sie in jedem der folgenden Fälle eine Matrix M, sodass \(MA = B\) ist.
+
+Zunächst einmal müssen wir A invertieren da
+
+\[
+\begin{split}
+MAA^{-1} = BA^{-1} \\
+ME = BA^{-1} \\
+M = BA^{-1}
+\end{split}
+\]
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 4 & -4 & 1 & 0 & 0 \\
+  1 & -3 & 1 & 0 & 1 & 0 \\
+  1 & -2 & 0 & 0 & 0 & 1 \\
+\end{array}
+\right )
+\]
+
+III + I:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 4 & -4 & 1 & 0 & 0 \\
+  1 & -3 & 1 & 0 & 1 & 0 \\
+  0 & 2 & -4 & 1 & 0 & 1 \\
+\end{array}
+\right )
+\]
+
+I - III:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 2 & 0 & 0 & 0 & -1 \\
+  1 & -3 & 1 & 0 & 1 & 0 \\
+  0 & 2 & -4 & 1 & 0 & 1 \\
+\end{array}
+\right )
+\]
+
+II + I:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 2 & 0 & 0 & 0 & -1 \\
+  0 & -1 & 1 & 0 & 1 & -1 \\
+  0 & 2 & -4 & 1 & 0 & 1 \\
+\end{array}
+\right )
+\]
+
+I + 2II:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 0 & 2 & 0 & 2 & -3 \\
+  0 & -1 & 1 & 0 & 1 & -1 \\
+  0 & 2 & -4 & 1 & 0 & 1 \\
+\end{array}
+\right )
+\]
+
+III + 2II:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 0 & 2 & 0 & 2 & -3 \\
+  0 & -1 & 1 & 0 & 1 & -1 \\
+  0 & 0 & -2 & 1 & 2 & -1 \\
+\end{array}
+\right )
+\]
+
+I + III:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  -1 & 0 & 0 & 1 & 4 & -4 \\
+  0 & -1 & 1 & 0 & 1 & -1 \\
+  0 & 0 & -2 & 1 & 2 & -1 \\
+\end{array}
+\right )
+\]
+
+III * -0.5, II * -1, I * -1:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  1 & 0 & 0 & -1 & -4 & 4 \\
+  0 & 1 & -1 & 0 & -1 & 1 \\
+  0 & 0 & 1 & -0.5 & -1 & 0.5 \\
+\end{array}
+\right )
+\]
+
+II + III:
+
+\[
+\left (
+\begin{array}{ccc|ccc}
+  1 & 0 & 0 & -1 & -4 & 4 \\
+  0 & 1 & 0 & -0.5 & -2 & 1.5 \\
+  0 & 0 & 1 & -0.5 & -1 & 0.5 \\
+\end{array}
+\right )
+\]
+
+Damit ergibt sich für \(A^{-1}\)
+\(
+\begin{pmatrix}
+  -1 & -4 & 4 \\
+  -0.5 & -2 & 1.5 \\
+  -0.5 & -1 & 0.5 \\
+\end{pmatrix}
+\)
+
+Kurze Kontrolle ob die Invertierung korrekt ist:
+
+\[
+\begin{pmatrix}
+  -1 & 4 & -4 \\
+  1 & -3 & 1 \\
+  1 & -2 & 0
+\end{pmatrix}
+*
+\begin{pmatrix}
+  -1 & -4 & 4 \\
+  -0.5 & -2 & 1.5 \\
+  -0.5 & -1 & 0.5 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 \\
+\end{pmatrix}
+\]
+
+Nun zu der Bestimmung von M gegeben ein bestimmtes B:
+
+\[
+B =
+\begin{pmatrix}
+  2 & 1 & 4 \\
+  0 & 0 & -7 \\
+  4 & 5 & 3 \\
+\end{pmatrix}
+\]
+
+\[
+M = BA^{-1} =
+\begin{pmatrix}
+  2 & 1 & 4 \\
+  0 & 0 & -7 \\
+  4 & 5 & 3 \\
+\end{pmatrix}
+*
+\begin{pmatrix}
+  -1 & -4 & 4 \\
+  -0.5 & -2 & 1.5 \\
+  -0.5 & -1 & 0.5 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -4.5 & -14 & 11.5 \\
+  3.5 & 7 & -3.5 \\
+  -8 & -29 & 25 \\
+\end{pmatrix}
+\]
+
+\[
+B =
+\begin{pmatrix}
+  1 & 2 & 3 \\
+  1 & 0 & 1 \\
+  2 & 2 & 8 \\
+\end{pmatrix}
+\]
+
+\[
+M = BA^{-1} =
+\begin{pmatrix}
+  1 & 2 & 3 \\
+  1 & 0 & 1 \\
+  2 & 2 & 8 \\
+\end{pmatrix}
+*
+\begin{pmatrix}
+  -1 & -4 & 4 \\
+  -0.5 & -2 & 1.5 \\
+  -0.5 & -1 & 0.5 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -3.5 & -11 & 8.5 \\
+  -1.5 & -5 & 4.5 \\
+  -7 & -20 & 15 \\
+\end{pmatrix}
+\]
+
+\[
+B =
+\begin{pmatrix}
+  0 & 4 & 7 \\
+  9 & 3 & 2 \\
+  4 & 6 & 6 \\
+\end{pmatrix}
+\]
+
+\[
+M = BA^{-1} =
+\begin{pmatrix}
+  0 & 4 & 7 \\
+  9 & 3 & 2 \\
+  4 & 6 & 6 \\
+\end{pmatrix}
+*
+\begin{pmatrix}
+  -1 & -4 & 4 \\
+  -0.5 & -2 & 1.5 \\
+  -0.5 & -1 & 0.5 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  -5.5 & -15 & 9.5 \\
+  -11.5 & -44 & 41.5 \\
+  -10 & -34 & 28 \\
+\end{pmatrix}
+\]
+
+\end{document}
