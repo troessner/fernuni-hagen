@@ -19,21 +19,132 @@ Bestimmen Sie die Lösungsmenge des folgenden linearen Gleichungssystems über 
 
 \[
 \begin{split}
-x1 + 2x2 − 3x3 − 2x4 + 4x5 = 1 \\
-2x1 + 5x2 − 8x3 − x4 + 6x5 = 4 \\
-x1 + 4x2 − 7x3 + 5x4 + 2x5 = 8.
+x_{1} + 2x_{2} - 3x_{3} - 2x_{4} + 4x_{5} = 1 \\
+2x_{1} + 5x_{2} - 8x_{3} - x_{4} + 6x_{5} = 4 \\
+x_{1} + 4x_{2} - 7x_{3} + 5x_{4} + 2x_{5} = 8.
 \end{split}
 \]
 
 Im ersten Schritt schreiben wir obiges LGS als Koeffizientenmatrix und wenden dann das Gaußsche Lösungsverfahren an um zur Treppennormalform zu gelangen:
 
 \[
+\left (
+\begin{array}{ccccc|c}
+  1 & 2 & -3 & -2 & 4 & 1 \\
+  2 & 5 & -8 & -1 & 6 & 4 \\
+  1 & 4 & -7 & 5 & 2 & 8 \\
+\end{array}
+\right )
+\]
+
+III - I:
+
+\[
+\left (
+\begin{array}{ccccc|c}
+  1 & 2 & -3 & -2 & 4 & 1 \\
+  2 & 5 & -8 & -1 & 6 & 4 \\
+  0 & 2 & -4 & 7 & -2 & 7 \\
+\end{array}
+\right )
+\]
+
+II - 2*I:
+
+\[
+\left (
+\begin{array}{ccccc|c}
+  1 & 2 & -3 & -2 & 4 & 1 \\
+  0 & 1 & -2 & 3 & -2 & 2 \\
+  0 & 2 & -4 & 7 & -2 & 7 \\
+\end{array}
+\right )
+\]
+
+III - 2*II:
+
+\[
+\left (
+\begin{array}{ccccc|c}
+  1 & 2 & -3 & -2 & 4 & 1 \\
+  0 & 1 & -2 & 3 & -2 & 2 \\
+  0 & 0 & 0 & 1 & 2 & 3 \\
+\end{array}
+\right )
+\]
+
+Damit ist die Matrix nun in Zeilenstufenform. Die letzte Zeile betrachtend gilt:
+
+\[
+x_{4} + 2x_{5} = 3
+\]
+
+Setzen wir nun \(x_{5} = r\) haben wir
+
+\[
 \begin{split}
-\begin{pmatrix}
-  1 & 2 & -3 & -2 & 4 \\
-  2 & 5 & -8 & -1 & 6 \\
-  1 & 4 & -7 & 5 & 2 \\
-\end{pmatrix}
+x_{4} + 2r = 3 \\
+x_{4} = 3 - 2r
+\end{split}
+\]
+
+Für die zweite Zeile heißt das
+
+\[
+\begin{split}
+x_{2} - 2x_{3} + 3x_{4} - 2x_{5} = 2 \\
+x_{2} - 2x_{3} + 3(3 - 2r) - 2r = 2 \\
+x_{2} - 2x_{3} + 9 - 6r - 2r = 2 \\
+x_{2} - 2x_{3} + 9 - 8r = 2 \\
+\end{split}
+\]
+
+Setzen wir nun \(x_{3} = s\) haben wir
+
+\[
+\begin{split}
+x_{2} - 2s + 9 - 8r = 2 \\
+x_{2} = 2s + 8r - 7 \\
+\end{split}
+\]
+
+Für die erste Zeile heißt das
+
+\[
+\begin{split}
+x_{1} + 2x_{2} - 3x_{3} - 2x_{4} + 4x_{5} = 1 \\
+x_{1} + 2(2s + 8r - 7) - 3s - 2(3 - 2r) + 4r = 1 \\
+x_{1} + 4s + 16r - 14 - 3s - 6 + 4r + 4r = 1 \\
+x_{1} = 1 + 6 + 14 - 4r - 4r - 16r - 4s + 3s \\
+x_{1} = 21 - 24r - s \\
+\end{split}
+\]
+
+Die Lösungsmenge des LGS ist damit
+
+\[
+L = \{21 - 24r - s, 2s + 8r - 7, s, 3 - 2r, r\}
+\]
+
+Setzen wir \(r = 1, s = 1\) erhalten wir \(\{-4, 3, 1, 1, 1\}\)
+
+Eingesetzt in unser ursprüngliches LGS
+
+\[
+\begin{split}
+x_{1} + 2x_{2} - 3x_{3} - 2x_{4} + 4x_{5} = 1 \\
+2x_{1} + 5x_{2} - 8x_{3} - x_{4} + 6x_{5} = 4 \\
+x_{1} + 4x_{2} - 7x_{3} + 5x_{4} + 2x_{5} = 8.
+\end{split}
+\]
+
+erhalten wir
+
+\[
+\begin{split}
+-4 + 6 - 3 - 2 + 4 = 1 \\
+-8 + 15 - 8 - 1 + 6 = 4 \\
+-4 + 12 - 7 + 5 + 2 = 8.
 \end{split}
 \]
 
