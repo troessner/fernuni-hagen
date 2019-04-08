@@ -20,7 +20,6 @@ program merge (input, output);
   i : integer;
   j : integer;
   k : integer;
-  PositionErgebnisFeld : integer;
 begin
   { sortierte Felder einlesen }
   writeln ('Bitte', FELDLAENGE1:2, ' Werte des ersten Feldes ',
@@ -38,48 +37,46 @@ begin
   while (i <= FELDLAENGE1) or (j <= FELDLAENGE2) do
   begin
 
-    // Erster Fall: Wir haben das Ende von Feld 1 erreicht: Kopiere das was von Feld 2 noch nicht
-    // prozessiert wurde zum Ergebnisfeld.
+    { Erster Fall: Wir haben das Ende von Feld 1 erreicht: Kopiere das was von Feld 2 noch nicht
+      prozessiert wurde zum Ergebnisfeld. }
     if (i > FELDLAENGE1) then
     begin
       for k := j to FELDLAENGE2 do
       begin
-        PositionErgebnisFeld := i + k - 1;
-        ErgebnisFeld[PositionErgebnisFeld] := Feld2[k];
+        ErgebnisFeld[i + k - 1] := Feld2[k];
       end;
-    break;
+    j := FELDLAENGE2 + 1;
     end
     
-    // Zweiter Fall: Wir haben das Ende von Feld 2 erreicht: Analog zum ersten Fall oben. 
+    {  Zweiter Fall: Wir haben das Ende von Feld 2 erreicht: Analog zum ersten Fall oben. }
     else if (j > FELDLAENGE2) then
     begin  
       for k := i to FELDLAENGE1 do
       begin
-        PositionErgebnisFeld := j + k - 1;
-        ErgebnisFeld[PositionErgebnisFeld] := Feld1[k];        
+        ErgebnisFeld[j + k - 1] := Feld1[k];        
       end;
-    break;
+    i := FELDLAENGE1 + 1;
     end
 
-    // Dritter Fall: Vergleiche die beiden aktuellen Felder. Wenn das i-te kleiner-gleich ist, kopiere
-    // das ins Ergebnisfeld und inkrementiere i. Wenn das j-te kleiner ist genau andersrum.    
+    { Dritter Fall: Vergleiche die beiden aktuellen Felder. Wenn das i-te kleiner-gleich ist, kopiere
+      das ins Ergebnisfeld und inkrementiere i. Wenn das j-te kleiner ist genau andersrum. }    
     else
     begin
-      PositionErgebnisFeld := i + j - 1;
       if (Feld1[i] <= Feld2[j]) then
       begin
-        ErgebnisFeld[PositionErgebnisFeld] := Feld1[i];
+        ErgebnisFeld[i + j - 1] := Feld1[i];
         i := i + 1;
       end
       else
       begin
-        ErgebnisFeld[PositionErgebnisFeld] := Feld2[j];
+        ErgebnisFeld[i + j - 1] := Feld2[j];
         j := j + 1;
       end;
     end;
   end;
   
-  writeln('Ergebnis: ');
+  writeln('Das Ergebnisfeld ist: ');
   for k := 1 to ERGEBNISFELDLAENGE do
-    write(ErgebnisFeld[k], ' ');
+    write (ErgebnisFeld[k], ' ');
+  writeln
 end.
