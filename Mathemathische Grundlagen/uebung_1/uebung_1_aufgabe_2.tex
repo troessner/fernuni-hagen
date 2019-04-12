@@ -143,7 +143,7 @@ f(AB)= ((aa'+bc')(cb'+dd')) - ((ab'+bd')(ca'+dc'))
 
 Was zu zeigen war.
 
-\subsection*{TODO: Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(A+B) = f(A) + f(B)\)}
+\subsection*{Für alle \(A, B\in M_{22}(\mathbb{K})\) gilt \(f(A+B) = f(A) + f(B)\)}
 
 Sei
 
@@ -191,11 +191,19 @@ A+B=
 und damit
 
 \[
-f(A+B)= ((a+a')(d+d'))-((b+b')(c+c'))
-      = (ad+ad'+a'd+a'd')-(bc+bc'+b'c+b'c')
+\begin{split}
+f(A+B)= ((a+a')(d+d'))-((b+b')(c+c')) \\
+      = (ad+ad'+a'd+a'd')-(bc+bc'+b'c+b'c') \\
+      = (a(d+d')+a'(d+'d'))-(b(c+c')+b'(c+c')) \\
+      = a(d+d')+a'(d+'d')-b(c+c')-b'(c+c') \\
+\end{split}
 \]
-???      = ad + a'd' - bc - b'c'
 
-Was zu zeigen war.
+Um die Behauptung zu zeigen sollte nun gelten
+\[
+a(d+d')+a'(d+'d')-b(c+c')-b'(c+c') = ad + a'd' - bc - b'c'
+\]
+
+Was offensichtlich nicht stimmt und ich damit die Aufgabe nicht gelöst habe. Ich bin verwirrt. Wo ist mein Denkfehler?
 
 \end{document}
