@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 2, Aufgabe 4}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 4}
+
+Untersuchen Sie, ob
+\(
+\begin{pmatrix}
+    1 \\
+    -5 \\
+    2
+\end{pmatrix}
+\in
+\left <
+\begin{pmatrix}
+    1 \\
+    -3 \\
+    2
+\end{pmatrix}
+,
+\begin{pmatrix}
+    2 \\
+    -4 \\
+    -1
+\end{pmatrix}
+,
+\begin{pmatrix}
+    1 \\
+    -5 \\
+    7
+\end{pmatrix}
+\right >
+\subseteq \mathbb{R^{3}}
+\)
+gilt.
+
+% Siehe https://www.massmatics.de/merkzettel/#!350:Vektoren_in_linearer_Huelle_enthalten
+
+Zunächst einmal bestimmen wir die Dimension der linearen Hülle in dem wir sie in Matrixform aufstellen und dann ihren Rang berechnen mittel ihrer Zeilenstufenform:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 \\
+    -3 & -4 & -5 \\
+    2 & -1 & 7
+\end{pmatrix}
+\]
+
+III - 2*I:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 \\
+    -3 & -4 & -5 \\
+    0 & -5 & 5
+\end{pmatrix}
+\]
+
+II + 3*I:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 \\
+    0 & 2 & -2 \\
+    0 & -5 & 5
+\end{pmatrix}
+\]
+
+(2 * III) + (5 * II):
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 \\
+    0 & 2 & -2 \\
+    0 & 0 & 0
+\end{pmatrix}
+\]
+
+Das können wir nicht mehr weiter vereinfachen, und damit ist der Rang der Matrix 2.
+
+Sei nun
+
+\(
+V =
+\left <
+\begin{pmatrix}
+    1 \\
+    -3 \\
+    2
+\end{pmatrix}
+,
+\begin{pmatrix}
+    2 \\
+    -4 \\
+    -1
+\end{pmatrix}
+,
+\begin{pmatrix}
+    1 \\
+    -5 \\
+    7
+\end{pmatrix}
+,
+\begin{pmatrix}
+    1 \\
+    -5 \\
+    2
+\end{pmatrix}
+\right >
+\subseteq \mathbb{R^{4}}
+\)
+
+Wieder bestimmen wir die Dimension der linearen Hülle in dem wir sie in Matrixform aufstellen und dann ihren Rang berechnen mittel ihrer Zeilenstufenform:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 & 1 \\
+    -3 & -4 & -5 & -5 \\
+    2 & -1 & 7 & 2
+\end{pmatrix}
+\]
+
+III - 2*I:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 & 1 \\
+    -3 & -4 & -5 & -5 \\
+    0 & -5 & 5 & 0
+\end{pmatrix}
+\]
+
+II + 3*I:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 & 1 \\
+    0 & 2 & -2 & -2 \\
+    0 & -5 & 5 & 0
+\end{pmatrix}
+\]
+
+(2 * III) + (5 * II):
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 & 1 \\
+    0 & 2 & -2 & -2 \\
+    0 & 0 & 0 & -10
+\end{pmatrix}
+\]
+
+Dies läßt sich nicht weiter vereinfachen und der Rang der Matrix ist 3.
+
+Damit gilt
+
+\(
+\begin{pmatrix}
+    1 \\
+    -5 \\
+    2
+\end{pmatrix}
+\not\in
+\left <
+\begin{pmatrix}
+    1 \\
+    -3 \\
+    2
+\end{pmatrix}
+,
+\begin{pmatrix}
+    2 \\
+    -4 \\
+    -1
+\end{pmatrix}
+,
+\begin{pmatrix}
+    1 \\
+    -5 \\
+    7
+\end{pmatrix}
+\right >
+\)
+
+\end{document}
