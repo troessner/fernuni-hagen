@@ -1,0 +1,225 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 2, Aufgabe 3}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 3}
+
+% https://www.mathelounge.de/561719/ist-ein-erzeugendensystem-der-polynome-mit-hochstens-grad
+% https://www.mathelounge.de/77334/erzeugendensystem-raumes-polynome-grad-kleiner-gleich-also
+% Lösung via Wolfram Alpha:
+%   solve 2a+4b-2c=x, a+b+2c=y, a+c=z for a,b,c
+
+Sei \(V\) der Vektorraum der Polynome vom Grad \(\leq 2\) über \(R\).
+
+Beweisen Sie, das die Polynome \(p_{1} = 2T^2 + T + 1, p_{2} = 4T^2 + T, p_{3} = - 2T^2 + 2T + 1\) ein Erzeugendensystem bilden.
+
+Um dies zu klären, untersuchen wir ob sich jedes Polynom aus \(V\) als Linearkombination von \(p_{1}, p_{2}, p_{3}\) ausdrücken lässt.
+
+\[
+\begin{split}
+a_{2}T^2 + a_{1}T + a_{0} = \alpha(2T^2 + T + 1) + \beta(4T^2 + T) + \gamma(-2T^2 + 2T + 1) \\
+= 2 \alpha T^2 + \alpha T + \alpha + 4\beta T^2 + \beta T + (-2)\gamma T^2 + 2\gamma T + \gamma \\
+= 2 \alpha T^2 + 4\beta T^2 -2\gamma T^2 + \alpha T + \beta T + 2\gamma T + \alpha  + \gamma \\
+= (2 \alpha + 4\beta -2\gamma) T^2 + (\alpha + \beta + 2\gamma) T + (\alpha  + \gamma)
+\end{split}
+\]
+
+Damit ergibt sich:
+
+\[
+\begin{split}
+a_{2} = 2 \alpha + 4 \beta - 2\gamma \\
+a_{1} = \alpha + \beta + 2\gamma \\
+a_{0} = \alpha + \gamma \\
+\end{split}
+\]
+
+Nun wenden wir das Gauß Verfahren auf folgende Koeffizientenmatrix an:
+
+\[
+\left (
+\begin{array}{ccc|c}
+  2 & 4 & -2 & a_{2} \\
+  1 & 1 & 2 & a_{1} \\
+  1 & 0 & 1 & a_{0}
+\end{array}
+\right )
+\]
+
+III - II:
+
+\[
+\left (
+\begin{array}{ccc|c}
+  2 & 4 & -2 & a_{2} \\
+  1 & 1 & 2 & a_{1} \\
+  0 & -1 & -1 & a_{0} - a_{1}
+\end{array}
+\right )
+\]
+
+2 * II - I:
+
+\[
+\left (
+\begin{array}{ccc|c}
+  2 & 4 & -2 & a_{2} \\
+  0 & -2 & 6 & 2a_{1} - a_{2} \\
+  0 & -1 & -1 & a_{0} - a_{1}
+\end{array}
+\right )
+\]
+
+2 * III - II:
+
+\[
+\left (
+\begin{array}{ccc|c}
+  2 & 4 & -2 & a_{2} \\
+  0 & -2 & 6 & 2a_{1} - a_{2} \\
+  0 & 0 & -8 & 2(a_{0} - a_{1}) - (2a_{1} - a_{2})
+\end{array}
+\right )
+\]
+
+Etwas aufräumen ergibt:
+
+\[
+\left (
+\begin{array}{ccc|c}
+  2 & 4 & -2 & a_{2} \\
+  0 & -2 & 6 & 2a_{1} - a_{2} \\
+  0 & 0 & -8 & 2a_{0} - 4a_{1} + a_{2}
+\end{array}
+\right )
+\]
+
+Die dritte Zeile mal \(\frac{-1}{8}\):
+
+\[
+\left (
+\begin{array}{ccc|c}
+  2 & 4 & -2 & a_{2} \\
+  0 & -2 & 6 & 2a_{1} - a_{2} \\
+  0 & 0 & 1 & \frac{-1}{4}a_{0} + \frac{1}{2}a_{1} - \frac{1}{8}a_{2}
+\end{array}
+\right )
+\]
+
+Damit gilt:
+
+\[
+\gamma = -\frac{1}{4}a_{0} + \frac{1}{2}a_{1} - \frac{1}{8}a_{2}
+\]
+
+Einsetzen in die zweite zeile:
+
+\[
+-2\beta + 6\gamma = 2a_{1} - a_{2}
+\]
+
+liefert:
+
+\[
+-2\beta + 6(-\frac{1}{4}a_{0} + \frac{1}{2}a_{1} - \frac{1}{8}a_{2}) = 2a_{1} - a_{2}
+\]
+
+Woraus sich nun \(\beta\) ergibt:
+
+\[
+-2\beta - \frac{3}{2}a_{0} + 3a_{1} - \frac{3}{4}a_{2} = 2a_{1} - a_{2}
+\]
+
+\[
+-2\beta = \frac{3}{2}a_{0} - a_{1} - \frac{1}{4}a_{2}
+\]
+
+\[
+\beta = -\frac{3}{4}a_{0} + \frac{1}{2}a_{1} + \frac{1}{8}a_{2}
+\]
+
+Damit haben wir \(\beta\) bestimmt. Nun setzen wir \(\beta\) und \(\gamma\) in die erste Zeile ein:
+
+\[
+2\alpha + 4\beta - 2\gamma = a_{2}
+\]
+
+\[
+2\alpha + 4(-\frac{3}{4}a_{0} + \frac{1}{2}a_{1} + \frac{1}{8}a_{2}) - 2(-\frac{1}{4}a_{0} + \frac{1}{2}a_{1} - \frac{1}{8}a_{2}) = a_{2}
+\]
+
+\[
+2\alpha -3a_{0} + 2a_{1} + \frac{1}{2}a_{2} + \frac{1}{2}a_{0} - a_{1} + \frac{1}{4}a_{2} = a_{2}
+\]
+
+\[
+2\alpha - \frac{5}{2}a_{0} + a_{1} + \frac{3}{4}a_{2} = a_{2}
+\]
+
+\[
+2\alpha = a_{2} + \frac{5}{2}a_{0} - a_{1} - \frac{3}{4}a_{2}
+\]
+
+\[
+2\alpha = \frac{5}{2}a_{0} - a_{1} + \frac{1}{4}a_{2}
+\]
+
+\[
+\alpha = \frac{5}{4}a_{0} - \frac{1}{2}a_{1} + \frac{1}{8}a_{2}
+\]
+
+\(\alpha\), \(\beta\) und \(\gamma\) sind nun bestimmt als:
+
+\[
+\alpha = \frac{5}{4}a_{0} - \frac{1}{2}a_{1} + \frac{1}{8}a_{2}
+\]
+
+\[
+\beta = -\frac{3}{4}a_{0} + \frac{1}{2}a_{1} + \frac{1}{8}a_{2}
+\]
+
+\[
+\gamma = -\frac{1}{4}a_{0} + \frac{1}{2}a_{1} - \frac{1}{8}a_{2}
+\]
+
+Damit ist gezeigt, das sich jedes Polynom vom Grad \(\leq 2\) als Linearkombination von \(p_{1} = 2T^2 + T + 1, p_{2} = 4T^2 + T, p_{3} = - 2T^2 + 2T + 1\) erzeugen läßt. \(p_{1} = 2T^2 + T + 1, p_{2} = 4T^2 + T, p_{3} = - 2T^2 + 2T + 1\) bilden demzufolge ein Erzeugendensystem bilden.
+
+\textbf{Kurze Stichprobe:}
+
+Versuchen wir das Polynom \(2T^2 + 3T + 4\) dementsprechend zu generieren ergibt sich:
+
+\[
+2T^2 + 3T + 4 = (2 \alpha + 4\beta -2\gamma) T^2 + (\alpha + \beta + 2\gamma) T + (\alpha  + \gamma)
+\]
+
+Betrachten wir aus Lesbarkeitsgründen nur den ersten Term müsste gelten:
+
+\[
+\begin{split}
+2 = (2 \alpha + 4\beta -2\gamma) \\
+2(\frac{5}{4}a_{0} - \frac{1}{2}a_{1} + \frac{1}{8}a_{2}) + 4(-\frac{3}{4}a_{0} + \frac{1}{2}a_{1} + \frac{1}{8}a_{2}) - 2(-\frac{1}{4}a_{0} + \frac{1}{2}a_{1} - \frac{1}{8}a_{2}) =
+\\
+\frac{5}{2}a_{0} - a_{1} + \frac{1}{4}a_{2} - 3a_{0} + 2a_{1} + \frac{1}{2}a_{2} + \frac{1}{2}a_{0} - a_{1} + \frac{1}{4}a_{2}) = a_{2}
+\end{split}
+\]
+
+Der erste Koeffizient unseres Polynoms eingesetzt ergibt:
+
+\[
+a_{2} = 2
+\]
+
+was wahr ist.
+
+\end{document}

@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\title{Mathematische Grundlagen(1141) SoSe 2019 - Übungszettel 2, Aufgabe 5}
+
+\author{Timo Rößner }
+\date{März 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Aufgabe 5}
+
+Sei \(V\) der Vektorraum \(n x n\)-Matrizen über einem Körper \(\mathbb{K}\). Untersuchen Sie, ob die folgenden Teilmengen \(U\) und \(W\) von \(V\) Unterräume von \(V\) sind.
+
+% Siehe https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Untervektorraum
+
+\subsection*{U als Unterraum}
+
+\[
+U =
+\left \{
+A = (a_{ij}) \in V | a_{ij} = a_{ji} \forall 1 \leq i,j \leq n
+\right \}
+\]
+
+Zu zeigen: \(U\) ist ein Unterraum von \(V\):
+
+1.) Die Nullmatrix muss in \(U\) enthalten sein.
+
+Dies ist offensichtlich der Fall, da auch für die Nullmatrix \( a_{ij} = a_{ji} \forall 1 \leq i,j \leq n \) erfüllt ist.
+
+2.) \(U\) ist abgeschlossen unter der Skalarmultplikation.
+
+Für alle \(v \in U\) und \(\lambda \in \mathbb{R}\) ist \(\lambda v \in U\) da \(\lambda a_{ij} = \lambda a_{ji}\).
+
+3.) \(U\) ist abgeschlossen unter der Addition.
+
+Seien \(A, B \in U\) und \(C = A + B\) dann gilt für jeden Eintrag in \(C\) \(c_{ij} = a_{ij} + b_{ij}\) und für \(c_{ji} = a_{ji} + b_{ji}\) womit auch diese Bedingung erfüllt wäre.
+
+Damit ist \(U\) ein Unterraum von \(V\).
+
+\subsection*{V als Unterraum}
+
+Sei \(T\) eine feste Matrix in \(V\) und sei
+\(W =
+\left \{
+A \in V | AT = TA
+\right \}
+\)
+
+Aus der Aufgabenstellung wird klar, das entweder \(A\) oder \(T\) die Einheitsmatrix sein muss. Definieren wir im Folgenden \(T\) als die Einheitsmatrix.
+
+1.) Die Nullmatrix muss in \(V\) enthalten sein.
+
+Dies ist erfüllt wenn \(A\) selbst die Nullmatrix ist.
+
+2.) \(V\) ist abgeschlossen unter der Skalarmultplikation.
+
+\(V\) ist abgeschlossen unter der Skalarmultplikation da \(\lambda(AT) = \lambda(A) = \lambda(TA)\) ist.
+
+3.) \(V\) ist abgeschlossen unter der Addition.
+
+\(V\) ist abgeschlossen unter der Addition da \((AT) + C = A + C = (TA) + C\) ist.
+
+Damit ist \(V\) ein Unterraum von \(V\).
+
+\end{document}
